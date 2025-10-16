@@ -1,0 +1,111 @@
+/* Base Styles */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0d1117;
+  color: #c9d1d9;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+header {
+  background: linear-gradient(135deg, #0052d4, #65c7f7, #9cecfb);
+  padding: 2rem 0;
+  text-align: center;
+  color: white;
+  animation: fadeSlide 1.8s ease forwards;
+}
+
+nav {
+  margin-top: 1rem;
+}
+
+nav a {
+  color: inherit;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: 600;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background: #9cecfb;
+  transition: width 0.3s ease;
+}
+
+nav a:hover,
+nav a:focus {
+  color: #9cecfb;
+}
+
+nav a:hover::after,
+nav a:focus::after {
+  width: 100%;
+}
+
+/* Section Styles */
+main {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.section {
+  background: #161b22;
+  margin-bottom: 2rem;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 3px 10px rgba(22, 27, 34, 0.7);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+h1, h2 {
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.btn-glow {
+  display: inline-block;
+  background-color: #2380f7;
+  color: white;
+  padding: 13px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  box-shadow: 0 0 15px #2380f7, 0 0 25px #2380f7;
+  transition: all 0.4s ease;
+  margin-top: 1rem;
+}
+
+.btn-glow:hover,
+.btn-glow:focus {
+  background-color: #3b9cff;
+  box-shadow: 0 0 25px #3b9cff, 0 0 40px #3b9cff;
+  transform: scale(1.05);
+  outline: none;
+}
+
+/* Animations */
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
